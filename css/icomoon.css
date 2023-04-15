@@ -544,7 +544,7 @@
   content: "\e9de";
 }
 .icon-globe-outline:before {
-  content: "\e9df";
+  content: "...";
 }
 .icon-eye-outline:before {
   content: "\e9e0";
@@ -1381,7 +1381,7 @@
   content: "\e90d";
 }
 .icon-bulb:before {
-  content: "\e90e";
+  content: "...";
 }
 .icon-pen2:before {
   content: "\e90f";
@@ -1408,7 +1408,7 @@
   content: "\e916";
 }
 .icon-phone3:before {
-  content: "\e917";
+  content: "....";
 }
 .icon-news:before {
   content: "\e918";
@@ -1438,7 +1438,7 @@
   content: "\e920";
 }
 .icon-data:before {
-  content: "\e921";
+  content: "...";
 }
 .icon-music2:before {
   content: "\e922";
