@@ -1433,3 +1433,29 @@ body.offcanvas {
 
 .js .animate-box {
   opacity: 0; }
+
+/* Add this CSS to center the images */
+.image-container {
+  display: flex;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  flex-wrap: wrap; /* Allows the images to wrap to a new line if the container is smaller */
+}
+
+/* Adjust the margin between the images if desired */
+.image-container img {
+  margin: 10px; /* Change this value as needed */
+}
+
+/* Add this CSS to center the iframe */
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set the container's height to the full viewport height */
+}
+
+/* Adjust the width of the embedded iframe if needed */
+.iframe-container iframe {
+  max-width: 100%;
+}

@@ -184,7 +184,7 @@ html[xmlns] .flexslider .slides {
 .flex-pauseplay a:before {
   font-family: "flexslider-icon";
   font-size: 20px;
-  display: inline-block;
+  display: inline-block;image-container
   content: '\f004';
 }
 .flex-pauseplay a:hover {
