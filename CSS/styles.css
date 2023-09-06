@@ -1,0 +1,18 @@
+/* Style for the image */
+.profile-image {
+    float: left;
+    margin-right: 20px;
+}
+
+/* Style for the container of the description and link */
+.description-container {
+    overflow: hidden;
+}
+
+/* Style for the link */
+.favorite-link {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}
