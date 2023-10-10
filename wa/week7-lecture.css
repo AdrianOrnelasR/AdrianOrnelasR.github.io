@@ -1,0 +1,51 @@
+/* this is quick test to ensure css file is linked */
+body {
+    background-color: rgb(200, 201, 190);
+}
+
+div {
+    background-color: blue;
+    color: white;
+    font-size: 5vw; /*view width is based on the screen width 1 vp unit = current space avalible / 100*/
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5vw;
+    margin: 2.5vw;
+    border: yellow 5px solid;
+}
+
+/* .div-wrapper {
+    /* flex boxes are responsive, taking anything inside it and make it optimal 
+    display: flex;
+} */
+
+.div-wrapper {
+    /* try to use flex more */
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+/* tells you what screen you are on */
+@media screen and (max-width: 900px) { /* if display is less then 900px, make it red background*/
+    body {
+        background-color: rgb(255, 0, 0);
+    }
+
+    .div-wrapper {
+        /* flex boxes are responsive, taking anything inside it and make it optimal */
+        display: flex;
+        flex-direction: column;
+    }
+
+    div {
+        font-size: 2.5vw;
+    }
+}
+
+
+
+/* @media print {
+    body {
+        background-color: green;
+    }
+} */
