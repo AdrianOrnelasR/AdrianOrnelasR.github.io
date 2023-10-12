@@ -21,11 +21,14 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     max-width: 980px;
+    display: flex;
   }
   
   nav {
     background-color: #000;
     padding: .5em;
+    position: sticky;
+    top: 0%;
   }
   
   nav ul {
@@ -33,11 +36,16 @@ body {
     padding: 0;
     list-style: none;
   }
+
+  nav li {
+    display: inline-block;
+    
+  }
   
   nav a {
     color: #fff;
     text-decoration: none;
-    padding: .5em 1em;
+    padding: 8em 7em;
   }
   
   .photos {
@@ -47,5 +55,15 @@ body {
   }
 
   .feature {
-      width: 200px;
+    width: 200px;
+    float: left;
+    margin: 10px 20px 10px 0;
+  }
+
+  .photos aside li {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1px;
+    list-style: none; 
+    padding: 0; 
   }
