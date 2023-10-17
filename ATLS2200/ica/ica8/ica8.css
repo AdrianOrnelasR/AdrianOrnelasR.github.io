@@ -18,7 +18,7 @@ body{
     background-color: orangered;
     animation-duration: 4s;
     animation-name: box2move;
-    animation-iteration-count: 10;
+    animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
