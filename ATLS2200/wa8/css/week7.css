@@ -1,0 +1,59 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(45, 45, 45);
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20px;
+    background-color: rgb(0, 0, 0);
+    padding: 1vh;
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    font-family: 'Creepster', cursive;
+}
+nav a:hover{
+    color: rgb(206, 34, 34);
+}
+h1{
+    color: white;
+    font-family: 'Creepster', cursive;
+}
+h1:hover {
+    color: rgb(206, 34, 34);
+ }
+
+img{
+    width:30vw;
+    height: 54vh;
+}
+
+#red-ball{
+    background-color: rgb(255, 255, 255);
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    position: absolute;
+    left:22vw;
+    top:0;
+}
+
+@keyframes moveObject {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(700px, 0); }
+    50% { transform: translate(700px, 700px); }
+    75% { transform: translate(0, 700px); }
+    100% { transform: translate(0, 0); }
+}
+
+#red-ball {
+    animation: moveObject 10s infinite;
+}
