@@ -1,15 +1,11 @@
-/* change highlight color like reference webpage */
-::selection {
-    background: #ffe100; 
-}
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Copperplate";
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
 }
 .nav {
-    background-color: #fff;
+    background-color: #529158;
     color: #000000;
     padding: 8px;
     border-bottom: 8px solid #000000;
@@ -22,10 +18,11 @@ body {
     height: auto;
 }
 .header {
-    background-color: #fff;
+    background-color: #a8a8a8;
     color: #000000;
     padding: 8px;
     font-weight: 800;
+    
     text-align: center;
     border-bottom: 8px solid #000000;
 }
@@ -33,7 +30,7 @@ body {
     margin: 0px;
 }
 .festival {
-    background-color: #fff;
+    background-color: #529158;
     margin-bottom: 10px;
     padding: 2.8vw;
     border-radius: 5px;
@@ -115,7 +112,7 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: rgb(237, 255, 38);
+    background-color: #529158;
     color: rgb(0, 0, 0);
     font-size: 24px;
     border: none;
