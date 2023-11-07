@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="main.js" defer></script>
+    <title>Silly story generator</title>
+    
+    <style>
+      body {
+        font-family: helvetica, sans-serif;
+        text-align: center;
+        padding-left: 40%;
+        width: 350px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      div {
+        padding-bottom: 20px;
+      }
+
+      input[type="text"] {
+        padding: 5px;
+        width: 150px;
+      }
+
+      p {
+        background: #258bff7b;
+        color: #000000;
+        padding: 10px;
+        visibility: hidden;
+        border: 2px solid black;
+      }
+
+      .pretty_box {
+            border: 2px solid #000000; /* Border style */
+            background: rgb(203, 187, 169); /* Background color */
+            padding: 20px; /* Padding for inner content */
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class = "pretty_box">
+      <div>
+        <label for="customname">Enter custom name:</label>
+        <input id="customname" type="text" placeholder="" />
+      </div>
+      <div>
+        <label for="us">US</label
+        ><input id="us" type="radio" name="ukus" value="us" checked />
+        <label for="uk">UK</label
+        ><input id="uk" type="radio" name="ukus" value="uk" />
+      </div>
+      <div>
+        <button class="randomize">Generate random story</button>
+      </div>
+      <!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
+      <p class="story"></p>
+    </div>
+
+  </body>
+</html>
