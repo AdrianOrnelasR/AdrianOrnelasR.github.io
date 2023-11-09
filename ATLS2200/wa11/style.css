@@ -12,21 +12,21 @@ body {
 .full-img {
   position: relative;
   display: block;
-  max-width: 640px;
-  max-height: 480px;
+  width: 640px;
+  height: 480px;
 }
 
 .full-img img {
-  max-width: 640px;
-  max-height: 480px;
+  width: 640px;
+  height: 480px;
 }
 
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 640px;
-  max-height: 480px;
+  width: 640px;
+  height: 480px;
   background-color: rgba(0,0,0,0);
 }
 
