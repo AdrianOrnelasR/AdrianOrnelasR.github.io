@@ -11,6 +11,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // this is for the number block to have access to replace the number
     const number_blocks = document.querySelectorAll('.number-block');
 
+    // for the pop up 
+    const overlay = document.getElementById("overlay");
+    const modal = document.getElementById("myModal");
+    const closeBtn = document.querySelector(".close");
+
+    // make the pop up when page loaded
+    overlay.style.display = "block";
+    modal.style.display = "block";
+
+    // close the modal when you hit the close button
+    closeBtn.addEventListener("click", function(){
+        overlay.style.display = "none";
+        modal.style.display = "none";
+    });
+
+    // close the modal after 5 seconds if the close button wasnt hit
+    setTimeout(function (){
+        overlay.style.display = "none";
+        modal.style.display = "none";
+    }, 7000);
+
     // to go through numbers 0-9
     let count = 0;
     let number_hit = 1;
@@ -20,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         number_hit = count;
     }
     // determins how fast the numbers go through 
-    setInterval(left_sign_counter, 500);
+    setInterval(left_sign_counter, 200);
 
     // for the right sign
     let right_sign_X = true;
@@ -30,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         right_sign.classList.toggle('blue-sign', !right_sign_X);
     }
     // determins how fast the X for remove last element and D for duplicate last element
-    setInterval(right_sign_change, 500);
+    setInterval(right_sign_change, 200);
  
     document.addEventListener('mousemove', function (event) {
         // get x and y as an event listener
@@ -47,7 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
             follow_mouse_element.style.display = 'none';
             // bring back mouse 
             document.body.style.cursor = 'auto';
-        }else{
+        }else if(overlay.style.display === "block" && modal.style.display === "block"){
+            follow_mouse_element.style.display = 'none';
+        }
+        else{
             // hide the defult mouse 
             document.body.style.cursor = 'none';
         }
@@ -83,10 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // function to deal with the placing the number hit into the number block 
     function update_number_block(entry){
         // find the last filled number block 
-        for(const curr_block of number_blocks){
-            // check to make sure its a number spot and not a '-'
-            if(curr_block.innerHTML === '0'){
-                curr_block.innerHTML = entry;
+        for(let i = 0; i < number_blocks.length; i++){
+            // // check to make sure its a number spot and not a '-'
+            if(number_blocks[i].innerHTML === '0' && number_blocks[i].innerHTML !== '-'){
+                number_blocks[i].innerHTML = entry;
                 break;
             }
         }
