@@ -1,3 +1,7 @@
+// references:
+// https://www.scaler.com/topics/add-property-to-object-javascript/
+// https://flexiple.com/javascript/loop-through-object-javascript
+
 let HR = {
     "employees": [{
         "name": "Sam",
