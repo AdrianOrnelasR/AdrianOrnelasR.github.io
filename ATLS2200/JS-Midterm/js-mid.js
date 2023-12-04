@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         number_hit = count;
     }
     // determins how fast the numbers go through 
-    setInterval(left_sign_counter, 200);
+    setInterval(left_sign_counter, 100);
 
     // for the right sign
     let right_sign_X = true;
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         right_sign.classList.toggle('blue-sign', !right_sign_X);
     }
     // determins how fast the X for remove last element and D for duplicate last element
-    setInterval(right_sign_change, 200);
+    setInterval(right_sign_change, 100);
  
     document.addEventListener('mousemove', function (event) {
         // get x and y as an event listener
@@ -144,4 +144,56 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } 
     }
+    // to make the signs move around the screen to make more difficult to hit
+    // verables left
+    let leftSignX = 100;
+    let leftSignY = 200;
+    let leftSignSpeedX = 10;
+    let leftSignSpeedY = 10;
+    // verables right sign
+    let rightSignX = window.innerWidth - 200;
+    let rightSignY = 200;
+    let rightSignSpeedX = -7;
+    let rightSignSpeedY = 7;
+    // header veriable
+    const header = document.querySelector('header');
+    // function to move signs 
+    function moveSigns() {
+        // left sign
+        leftSignX += leftSignSpeedX;
+        leftSignY += leftSignSpeedY;
+        // checks for edges to bounce off left sign
+        if (leftSignY < header.getBoundingClientRect().bottom) {
+            leftSignY = header.getBoundingClientRect().bottom;
+            leftSignSpeedY *= -1;
+        }
+        if (leftSignX < 0 || leftSignX > window.innerWidth - 200) {
+            leftSignSpeedX *= -1;
+        }
+        if (leftSignY < 0 || leftSignY > window.innerHeight - 300) {
+            leftSignSpeedY *= -1;
+        }
+        // update left sign
+        left_sign.style.left = leftSignX + "px";
+        left_sign.style.top = leftSignY + "px";
+        // right sign
+        rightSignX += rightSignSpeedX;
+        rightSignY += rightSignSpeedY;
+        // checks for edges to bounce off right sign
+        if (rightSignY < header.getBoundingClientRect().bottom) {
+            rightSignY = header.getBoundingClientRect().bottom;
+            rightSignSpeedY *= -1;
+        }
+        if (rightSignX < 0 || rightSignX > window.innerWidth - 200) {
+            rightSignSpeedX *= -1;
+        }
+        if (rightSignY < 0 || rightSignY > window.innerHeight - 300) {
+            rightSignSpeedY *= -1;
+        }
+        // update right
+        right_sign.style.left = rightSignX + "px";
+        right_sign.style.top = rightSignY + "px";
+    }
+    // make the signs move every 50 miliseconds 
+    setInterval(moveSigns, 50);
 });
