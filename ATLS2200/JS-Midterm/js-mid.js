@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
         right_sign.innerHTML = right_sign_X ? 'X' : 'D';
         right_sign.classList.toggle('blue-sign', !right_sign_X);
     }
-    // determins how fast the X for remove last element and D for duplicate last element
-    setInterval(right_sign_change, 100);
+    // determins how fast the X for remove last element and D for duplicate last element cycle through
+    setInterval(right_sign_change, 250);
  
     document.addEventListener('mousemove', function (event) {
         // get x and y as an event listener
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // find the last filled number block 
         for(let i = 0; i < number_blocks.length; i++){
             // // check to make sure its a number spot and not a '-'
-            if(number_blocks[i].innerHTML === '0' && number_blocks[i].innerHTML !== '-'){
+            if(number_blocks[i].innerHTML === '.' && number_blocks[i].innerHTML !== '-'){
                 number_blocks[i].innerHTML = entry;
                 break;
             }
@@ -119,9 +119,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function delete_last_entry(){
         // find the last filled number block 
         for(let i = number_blocks.length - 1; i >= 0; i--){
-            // check to make sure the number spot is not a '-' or a '0'
-            if (number_blocks[i].innerHTML !== '0' && number_blocks[i].innerHTML !== '-') {
-                number_blocks[i].innerHTML = '0';
+            // check to make sure the number spot is not a '-' or a '.'
+            if (number_blocks[i].innerHTML !== '.' && number_blocks[i].innerHTML !== '-') {
+                number_blocks[i].innerHTML = '.';
                 break;
             }
         }
@@ -129,21 +129,43 @@ document.addEventListener("DOMContentLoaded", function () {
     // function to duplicate the last entry in the number block 
     function duplicate_last_entry(){
         // get the last filled block 
-        let last_entry = '0';
+        let last_entry = '.';
         for(let i = number_blocks.length - 1; i >= 0; i--){
-            if(number_blocks[i].innerHTML !== '0' && number_blocks[i].innerHTML !== '-'){
+            if(number_blocks[i].innerHTML !== '.' && number_blocks[i].innerHTML !== '-'){
                 last_entry = number_blocks[i].innerHTML;
                 break;
             }
         }
         // now find the first empty slot and put the number in 
         for(const curr_block of number_blocks){
-            if(curr_block.innerHTML === '0'){
+            if(curr_block.innerHTML === '.'){
                 curr_block.innerHTML = last_entry;
                 break;
             }
         } 
     }
+
+    // submit button
+    // check all numbers entered 
+    function submitCheck(){
+        for(const block of number_blocks){
+            if(block.innerHTML==='.'){
+                return false;
+            }
+        }
+        return true;
+    }
+    // submit button click on 
+    document.getElementById('submitButton').addEventListener('click', function(){
+        if(submitCheck()){
+            const currNum = Array.from(number_blocks).map(block => block.innerHTML).join('');
+            document.getElementById('popupText').innerText = `You have entered the number: ${currNum} -> Please refresh to play again!`
+            document.getElementById('popup').style.display = 'block';
+        }else{
+            alert('Come on buddy, atleast enter a valid number!!');
+        }
+    });
+
     // to make the signs move around the screen to make more difficult to hit
     // verables left
     let leftSignX = 100;
